@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
     else
       render :new
     # render :text => "Saving an image. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+    end
   end
 
   private
