@@ -1,18 +1,40 @@
 Rails.application.routes.draw do
-  root "images#index"
-  get "images" => "images#index"
 
-  post "images" => "images#create"
-  get "images/new" => "images#new"
+root 'images#index'
 
-  get "images/:id" => "images#show", as: "image"
+  resources :images
 
-  get "images/:id/edit" => "images#edit", as: "edit_image"
-  patch "images/:id" => "images#update"
+# -----------------------------------------------------------------------------
+# CRUD PATTERN
 
-  delete "images/:id" => "images#destroy", as: "delete_image"
+  # root 'images#index'
+  #
+  # post 'images' => "images#create"
+  #
+  # get 'images' => 'images#index'
+  # get 'images/new' => 'images#new'
+  # get 'images/:id/edit' => 'images#edit', as: 'edit_image'
+  # get 'images/:id' => 'images#show', as: 'image'
 
-  root "images#index"
+# -----------------------------------------------------------------------------
+#  THE ABOVE CODE IS A REFACTORED VERSION OF THE BELOW
+
+  # root "images#index"
+  # get "images" => "images#index"
+  #
+  # post "images" => "images#create"
+  # get "images/new" => "images#new"
+  #
+  # get "images/:id" => "images#show", as: "image"
+  #
+  # get "images/:id/edit" => "images#edit", as: "edit_image"
+  # patch "images/:id" => "images#update"
+  #
+  # delete "images/:id" => "images#destroy", as: "delete_image"
+  #
+  # root "images#index"
+  #
+# -----------------------------------------------------------------------------
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
